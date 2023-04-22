@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>net.kotfu.iterm-toolkit</string>
+	<key>connections</key>
+	<dict>
+		<key>174CD537-DE13-499A-A00E-41FC246DE43D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B6E73E78-3C51-4C85-A5AD-A021526AC985</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>7D9DF57A-5DF9-5DB9-AB88-88DAC6AD7FB1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8F087205-5CB3-40DC-BE24-E74C1E5E0CD8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D42EB9ED-6F46-4B61-A6D5-6C1EE503F197</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B6E73E78-3C51-4C85-A5AD-A021526AC985</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>FD4FF832-E0C3-4235-88E9-8F17142B1BF2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>174CD537-DE13-499A-A00E-41FC246DE43D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Kotfu</string>
+	<key>description</key>
+	<string>Use iTerm easily from within Alfred 5</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>iTerm Toolkit</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>{var:profile_keyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Please Wait</string>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>entrypoint.py</string>
+				<key>subtext</key>
+				<string>Find and open an iTerm profile</string>
+				<key>title</key>
+				<string>Enter an iTerm profile name</string>
+				<key>type</key>
+				<integer>8</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>7D9DF57A-5DF9-5DB9-AB88-88DAC6AD7FB1</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>-- For the latest version:
+-- https://github.com/vitorgalvao/custom-alfred-iterm-scripts
+
+-- Set this property to true if iTerm is configured to launch without opening a new window
+-- to set this in iterm, create a window arrangement with no windows, then set
+-- window restoration policy to "open default window arrangement"
+---property iterm_opens_quietly : false
+
+-- Handlers
+on new_window(theProfile)
+  tell application "iTerm" to create window with profile theProfile
+end new_window
+
+on new_tab(theProfile)
+  if has_windows() then
+    -- this generates an error if iterm doesn't have any windows open
+    tell application "iTerm" to tell the first window to create tab with profile theProfile
+  else
+    new_window(theProfile)
+  end if
+end new_tab
+
+on call_forward()
+  tell application "iTerm" to activate
+end call_forward
+
+on is_running()
+  application "iTerm" is running
+end is_running
+
+on has_windows()
+  if not is_running() then return false
+
+  tell application "iTerm"
+    if windows is {} then return false
+    if tabs of current window is {} then return false
+    if sessions of current tab of current window is {} then return false
+
+    set session_text to contents of current session of current tab of current window
+    if words of session_text is {} then return false
+  end tell
+
+  true
+end has_windows
+
+on send_text(custom_text)
+  tell application "iTerm" to tell the first window to tell current session to write text custom_text
+end send_text
+
+-- Main
+on run
+  set theProfile to "{query}"
+  set openin to (system attribute "profile_opens_in")
+  set iterm_opens_quietly to (system attribute "opens_quietly")
+
+  if openin = "window" then
+    new_window(theProfile)
+    call_forward()
+  else if openin = "tab" then
+    new_tab(theProfile)
+    call_forward()
+  end if
+
+  -- Make sure a window exists before we continue, or the write may fail
+  -- "with timeout" does not work with a "repeat"
+  -- Delay of 0.01 seconds repeated 500 times means a timeout of 5 seconds
+  set text_delay to (system attribute "")
+  repeat 500 times
+    if has_windows() then
+      delay 0.5
+      send_text(query)
+      call_forward()
+      exit repeat
+    end if
+
+    delay 0.01
+  end repeat
+end alfred_script</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>8F087205-5CB3-40DC-BE24-E74C1E5E0CD8</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>{var:command_keyword}</string>
+				<key>subtext</key>
+				<string>using profile {var:command_profile}</string>
+				<key>text</key>
+				<string>Run A Shell Command in iTerm</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>D42EB9ED-6F46-4B61-A6D5-6C1EE503F197</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>use AppleScript version "2.4" -- Yosemite (10.10) or later
+use scripting additions
+
+-- For the latest version:
+-- https://github.com/vitorgalvao/custom-alfred-iterm-scripts
+
+-- Set this property to true if iTerm is configured to launch without opening a new window
+-- to set this in iterm, create a window arrangement with no windows, then set
+-- window restoration policy to "open default window arrangement"
+---property iterm_opens_quietly : false
+
+-- Handlers
+on new_window(theProfile)
+	tell application "iTerm"
+		set theWindow to create window with profile theProfile
+		set theSession to the current session of the current tab of theWindow
+	end tell
+	return theSession
+end new_window
+
+on new_tab(theProfile)
+	if has_windows() then
+		-- this generates an error if iterm doesn't have any windows open
+		tell application "iTerm"
+			set theTab to create tab of the front window with profile theProfile
+			set theSession to the current session of the theTab
+		end tell
+		return theSession
+	else
+		return new_window(theProfile)
+	end if
+end new_tab
+
+on call_forward()
+	tell application "iTerm" to activate
+end call_forward
+
+on is_running()
+	application "iTerm" is running
+end is_running
+
+on has_windows()
+	if not is_running() then return false
+	
+	tell application "iTerm"
+		if windows is {} then return false
+		if tabs of current window is {} then return false
+		if sessions of current tab of current window is {} then return false
+		
+		set session_text to contents of current session of current tab of current window
+		if words of session_text is {} then return false
+	end tell
+	
+	true
+end has_windows
+
+on send_text(theSession, custom_text)
+	-- Make sure a window exists before we continue, or the write may fail
+	-- "with timeout" does not work with a "repeat"
+	-- Delay of 0.05 seconds repeated 100 times means a timeout of 5 seconds
+    set text_delay to 0
+    try
+	    set text_delay to (system attribute "delay_before_typing") as number
+    end try
+	repeat 100 times
+		if has_windows() then
+			-- now that the window has showed up wait for
+			-- the workflow config delay for shell initialization
+			-- to occur
+			delay text_delay
+			tell application "iTerm" to tell theSession to write text custom_text
+			exit repeat
+		end if
+		
+		delay 0.05
+	end repeat
+	
+end send_text
+
+-- Main
+on run
+	set command to "{query}"
+	set runs_in to (system attribute "command_runs_in")
+	set command_profile to (system attribute "command_profile")
+	set iterm_opens_quietly to (system attribute "opens_quietly")
+	
+	if runs_in = "window" then
+		set theSession to new_window(command_profile)
+	else if runs_in = "tab" then
+		set theSession to new_tab(command_profile)
+	else if runs_in = "session" then
+		if not has_windows() then
+			set theSession to new_window(command_profile)
+		else
+			tell application "iTerm"
+				set theSession to current session of current tab of current window
+			end tell
+		end if
+	end if
+	call_forward()
+	send_text(theSession, command)
+	
+end run</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B6E73E78-3C51-4C85-A5AD-A021526AC985</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
+				<key>filetypes</key>
+				<array>
+					<string>+public.directory</string>
+				</array>
+				<key>name</key>
+				<string>Open iTerm Session Here</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>FD4FF832-E0C3-4235-88E9-8F17142B1BF2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>cd {query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>174CD537-DE13-499A-A00E-41FC246DE43D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Search through your iTerm profiles using Alfred and easily open one. Extremely useful if you have a lot of profiles, e.g. with an SSH command for each server.</string>
+	<key>uidata</key>
+	<dict>
+		<key>174CD537-DE13-499A-A00E-41FC246DE43D</key>
+		<dict>
+			<key>xpos</key>
+			<real>300</real>
+			<key>ypos</key>
+			<real>360</real>
+		</dict>
+		<key>7D9DF57A-5DF9-5DB9-AB88-88DAC6AD7FB1</key>
+		<dict>
+			<key>xpos</key>
+			<real>85</real>
+			<key>ypos</key>
+			<real>35</real>
+		</dict>
+		<key>8F087205-5CB3-40DC-BE24-E74C1E5E0CD8</key>
+		<dict>
+			<key>xpos</key>
+			<real>430</real>
+			<key>ypos</key>
+			<real>35</real>
+		</dict>
+		<key>B6E73E78-3C51-4C85-A5AD-A021526AC985</key>
+		<dict>
+			<key>xpos</key>
+			<real>430</real>
+			<key>ypos</key>
+			<real>190</real>
+		</dict>
+		<key>D42EB9ED-6F46-4B61-A6D5-6C1EE503F197</key>
+		<dict>
+			<key>xpos</key>
+			<real>80</real>
+			<key>ypos</key>
+			<real>185</real>
+		</dict>
+		<key>FD4FF832-E0C3-4235-88E9-8F17142B1BF2</key>
+		<dict>
+			<key>xpos</key>
+			<real>85</real>
+			<key>ypos</key>
+			<real>330</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>profile</string>
+				<key>placeholder</key>
+				<string>enter keyword</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Keyword used to initiate search for iterm profiles in alfred</string>
+			<key>label</key>
+			<string>Profile Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>profile_keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>window</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>New Tab</string>
+						<string>tab</string>
+					</array>
+					<array>
+						<string>New Window</string>
+						<string>window</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string>Choose whether the selected profile opens in a new tab or a new window</string>
+			<key>label</key>
+			<string>Profile Opens In</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>profile_opens_in</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>$</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>the keyword to run a shell command</string>
+			<key>label</key>
+			<string>Command Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>command_keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>tab</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>New Tab</string>
+						<string>tab</string>
+					</array>
+					<array>
+						<string>New Window</string>
+						<string>window</string>
+					</array>
+					<array>
+						<string>Current Session</string>
+						<string>session</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Command Runs In</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>command_runs_in</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string>profile name</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>The name of the profile to use to run the shell command. If empty, use the default profile. Ignored if 'Command Runs In' is set to 'Active Session'</string>
+			<key>label</key>
+			<string>Command Profile</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>command_profile</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+			</dict>
+			<key>description</key>
+			<string>Does iTerm open a new profile when launching?</string>
+			<key>label</key>
+			<string>iTerm Opens Quietly</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>opens_quietly</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>0</string>
+				<key>placeholder</key>
+				<string>delay in seconds</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Wait for this many seconds (fractions of a second allowed) before sending input to the shell to run the command. If your shell initialization is complicated, sometimes the input sent from Alfred will be lost. Increase this delay to ensure the input is not lost by the shell.</string>
+			<key>label</key>
+			<string>Delay Before Typing Command</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>delay_before_typing</string>
+		</dict>
+	</array>
+	<key>version</key>
+	<string>0.2.0</string>
+	<key>webaddress</key>
+	<string>https://github.com/kotfu/alfred-iterm-toolkit-workflow</string>
+</dict>
+</plist>
