@@ -1,0 +1,14 @@
+# pyenv et all
+.python-version
+
+# editor/ide stuff
+*~
+.tm_properties
+.idea
+.vscode
+.mr.developer.cfg
+.project
+.pydevproject
+
+# compiled python
+*.py[cod]
