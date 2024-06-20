@@ -29,10 +29,14 @@ def main(wf: Workflow3):
         if not profiles:
             wf.add_item('No profile matches', icon=ICON_WARNING)
 
-        profiles.sort(key=sort_key_for_profile)
+        #profiles.sort(key=sort_key_for_profile)
         for profile in profiles:
+            dest = os.getenv('profile_opens_in', default = '')
+            if dest:
+                dest = f" in a new {dest}"
+            subt = f"Open iTerm profile '{profile['name']}'{dest}"
             wf.add_item(title=profile['name'],
-                        subtitle=((str(profile['tags']) + ' ') if profile['tags'] else '') + profile['command'],
+                        subtitle=subt,
                         arg=profile['name'],
                         valid=True,
                         icon=profile['icon'])

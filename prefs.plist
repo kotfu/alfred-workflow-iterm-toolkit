@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>command_profile</key>
+	<string>localhost</string>
+	<key>command_runs_in</key>
+	<string>tab</string>
+	<key>command_runs_in_opt</key>
+	<string>window</string>
+	<key>delay_before_typing</key>
+	<string>1</string>
+	<key>profile_keyword</key>
+	<string>sh</string>
+</dict>
+</plist>

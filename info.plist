@@ -10,9 +10,71 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B6E73E78-3C51-4C85-A5AD-A021526AC985</string>
+				<string>6218105B-769C-4EF4-9043-CA26953D892A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>42BFB972-5198-4114-830F-5347FA3100C1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C369E338-4CD5-4D28-9DEC-959796C77DCD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>4F12876A-C84D-4D58-ADD9-119BBF3B9D6E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6218105B-769C-4EF4-9043-CA26953D892A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>5A83D99C-3375-4763-A9B8-37F5D4D26A8D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6218105B-769C-4EF4-9043-CA26953D892A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>5C3FCCC0-751E-4E7C-96AD-8B6F20578B9D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B37D23E9-381F-43E4-BB88-64768A812903</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>9BC2AE68-91DD-4401-AA48-E27C924F39E6</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
@@ -23,7 +85,56 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>8F087205-5CB3-40DC-BE24-E74C1E5E0CD8</string>
+				<string>FF506E5C-E831-46D7-B67B-AC367F63630C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string>Find and open an iTerm profile in a new {var:profile_opens_in}</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>42BFB972-5198-4114-830F-5347FA3100C1</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Open iTerm profile '{query}' in a new {var:profile_opens_in_opt}</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>9BC2AE68-91DD-4401-AA48-E27C924F39E6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6218105B-769C-4EF4-9043-CA26953D892A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>AB02EE64-6856-4173-9417-141421D02049</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6218105B-769C-4EF4-9043-CA26953D892A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B37D23E9-381F-43E4-BB88-64768A812903</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6218105B-769C-4EF4-9043-CA26953D892A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -36,11 +147,21 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B6E73E78-3C51-4C85-A5AD-A021526AC985</string>
+				<string>5A83D99C-3375-4763-A9B8-37F5D4D26A8D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>AB02EE64-6856-4173-9417-141421D02049</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>run '{query}' in a new iTerm {var:command_runs_in_opt} using profile {var:command_profile}</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -50,6 +171,29 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>174CD537-DE13-499A-A00E-41FC246DE43D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>4F12876A-C84D-4D58-ADD9-119BBF3B9D6E</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>FF506E5C-E831-46D7-B67B-AC367F63630C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C369E338-4CD5-4D28-9DEC-959796C77DCD</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -95,21 +239,23 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>Please Wait</string>
+				<string>Retreiving iTerm profiles</string>
 				<key>script</key>
 				<string></string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string>entrypoint.py</string>
+				<key>skipuniversalaction</key>
+				<true/>
 				<key>subtext</key>
-				<string>Find and open an iTerm profile</string>
+				<string></string>
 				<key>title</key>
 				<string>Enter an iTerm profile name</string>
 				<key>type</key>
 				<integer>8</integer>
 				<key>withspace</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
@@ -124,99 +270,82 @@
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>-- For the latest version:
--- https://github.com/vitorgalvao/custom-alfred-iterm-scripts
-
--- Set this property to true if iTerm is configured to launch without opening a new window
--- to set this in iterm, create a window arrangement with no windows, then set
--- window restoration policy to "open default window arrangement"
----property iterm_opens_quietly : false
-
--- Handlers
-on new_window(theProfile)
-  tell application "iTerm" to create window with profile theProfile
-end new_window
-
-on new_tab(theProfile)
-  if has_windows() then
-    -- this generates an error if iterm doesn't have any windows open
-    tell application "iTerm" to tell the first window to create tab with profile theProfile
-  else
-    new_window(theProfile)
-  end if
-end new_tab
-
-on call_forward()
-  tell application "iTerm" to activate
-end call_forward
-
-on is_running()
-  application "iTerm" is running
-end is_running
-
-on has_windows()
-  if not is_running() then return false
-
-  tell application "iTerm"
-    if windows is {} then return false
-    if tabs of current window is {} then return false
-    if sessions of current tab of current window is {} then return false
-
-    set session_text to contents of current session of current tab of current window
-    if words of session_text is {} then return false
-  end tell
-
-  true
-end has_windows
-
-on send_text(custom_text)
-  tell application "iTerm" to tell the first window to tell current session to write text custom_text
-end send_text
-
--- Main
-on run
-  set theProfile to "{query}"
-  set openin to (system attribute "profile_opens_in")
-  set iterm_opens_quietly to (system attribute "opens_quietly")
-
-  if openin = "window" then
-    new_window(theProfile)
-    call_forward()
-  else if openin = "tab" then
-    new_tab(theProfile)
-    call_forward()
-  end if
-
-  -- Make sure a window exists before we continue, or the write may fail
-  -- "with timeout" does not work with a "repeat"
-  -- Delay of 0.01 seconds repeated 500 times means a timeout of 5 seconds
-  set text_delay to (system attribute "")
-  repeat 500 times
-    if has_windows() then
-      delay 0.5
-      send_text(query)
-      call_forward()
-      exit repeat
-    end if
-
-    delay 0.01
-  end repeat
-end alfred_script</string>
-				<key>scriptargtype</key>
 				<integer>0</integer>
-				<key>scriptfile</key>
+				<key>script</key>
 				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>openprofile.scpt</string>
 				<key>type</key>
-				<integer>6</integer>
+				<integer>8</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>8F087205-5CB3-40DC-BE24-E74C1E5E0CD8</string>
+			<string>C369E338-4CD5-4D28-9DEC-959796C77DCD</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>opens_in</key>
+					<string>{var:profile_opens_in}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>FF506E5C-E831-46D7-B67B-AC367F63630C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>opens_in</key>
+					<string>{var:profile_opens_in_opt}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>42BFB972-5198-4114-830F-5347FA3100C1</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>runs_in</key>
+					<string>{var:command_runs_in}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>5A83D99C-3375-4763-A9B8-37F5D4D26A8D</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -225,8 +354,10 @@ end alfred_script</string>
 				<integer>0</integer>
 				<key>keyword</key>
 				<string>{var:command_keyword}</string>
+				<key>skipuniversalaction</key>
+				<true/>
 				<key>subtext</key>
-				<string>using profile {var:command_profile}</string>
+				<string>run '{query}' in a new iTerm {var:command_runs_in_opt} using profile {var:command_profile}</string>
 				<key>text</key>
 				<string>Run A Shell Command in iTerm</string>
 				<key>withspace</key>
@@ -242,127 +373,22 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
 				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>use AppleScript version "2.4" -- Yosemite (10.10) or later
-use scripting additions
-
--- For the latest version:
--- https://github.com/vitorgalvao/custom-alfred-iterm-scripts
-
--- Set this property to true if iTerm is configured to launch without opening a new window
--- to set this in iterm, create a window arrangement with no windows, then set
--- window restoration policy to "open default window arrangement"
----property iterm_opens_quietly : false
-
--- Handlers
-on new_window(theProfile)
-	tell application "iTerm"
-		set theWindow to create window with profile theProfile
-		set theSession to the current session of the current tab of theWindow
-	end tell
-	return theSession
-end new_window
-
-on new_tab(theProfile)
-	if has_windows() then
-		-- this generates an error if iterm doesn't have any windows open
-		tell application "iTerm"
-			set theTab to create tab of the front window with profile theProfile
-			set theSession to the current session of the theTab
-		end tell
-		return theSession
-	else
-		return new_window(theProfile)
-	end if
-end new_tab
-
-on call_forward()
-	tell application "iTerm" to activate
-end call_forward
-
-on is_running()
-	application "iTerm" is running
-end is_running
-
-on has_windows()
-	if not is_running() then return false
-	
-	tell application "iTerm"
-		if windows is {} then return false
-		if tabs of current window is {} then return false
-		if sessions of current tab of current window is {} then return false
-		
-		set session_text to contents of current session of current tab of current window
-		if words of session_text is {} then return false
-	end tell
-	
-	true
-end has_windows
-
-on send_text(theSession, custom_text)
-	-- Make sure a window exists before we continue, or the write may fail
-	-- "with timeout" does not work with a "repeat"
-	-- Delay of 0.05 seconds repeated 100 times means a timeout of 5 seconds
-    set text_delay to 0
-    try
-	    set text_delay to (system attribute "delay_before_typing") as number
-    end try
-	repeat 100 times
-		if has_windows() then
-			-- now that the window has showed up wait for
-			-- the workflow config delay for shell initialization
-			-- to occur
-			delay text_delay
-			tell application "iTerm" to tell theSession to write text custom_text
-			exit repeat
-		end if
-		
-		delay 0.05
-	end repeat
-	
-end send_text
-
--- Main
-on run
-	set command to "{query}"
-	set runs_in to (system attribute "command_runs_in")
-	set command_profile to (system attribute "command_profile")
-	set iterm_opens_quietly to (system attribute "opens_quietly")
-	
-	if runs_in = "window" then
-		set theSession to new_window(command_profile)
-	else if runs_in = "tab" then
-		set theSession to new_tab(command_profile)
-	else if runs_in = "session" then
-		if not has_windows() then
-			set theSession to new_window(command_profile)
-		else
-			tell application "iTerm"
-				set theSession to current session of current tab of current window
-			end tell
-		end if
-	end if
-	call_forward()
-	send_text(theSession, command)
-	
-end run</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>6</integer>
+				<key>variables</key>
+				<dict>
+					<key>runs_in</key>
+					<string>{var:command_runs_in_opt}</string>
+				</dict>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>B6E73E78-3C51-4C85-A5AD-A021526AC985</string>
+			<string>AB02EE64-6856-4173-9417-141421D02049</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -374,7 +400,7 @@ end run</string>
 					<string>+public.directory</string>
 				</array>
 				<key>name</key>
-				<string>Open iTerm Session Here</string>
+				<string>Open new iTerm session here</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.trigger.action</string>
@@ -391,7 +417,10 @@ end run</string>
 				<key>passthroughargument</key>
 				<false/>
 				<key>variables</key>
-				<dict/>
+				<dict>
+					<key>runs_in</key>
+					<string>{var:command_runs_in}</string>
+				</dict>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.argument</string>
@@ -400,52 +429,258 @@ end run</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>runshellcommand.scpt</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>6218105B-769C-4EF4-9043-CA26953D892A</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>cd {query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>runs_in</key>
+					<string>{var:command_runs_in_opt}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>4F12876A-C84D-4D58-ADD9-119BBF3B9D6E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsfiles</key>
+				<false/>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
+				<key>acceptstext</key>
+				<true/>
+				<key>acceptsurls</key>
+				<false/>
+				<key>name</key>
+				<string>Run as shell command in iTerm</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.universalaction</string>
+			<key>uid</key>
+			<string>5C3FCCC0-751E-4E7C-96AD-8B6F20578B9D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>runs_in</key>
+					<string>{var:command_runs_in}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>B37D23E9-381F-43E4-BB88-64768A812903</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>runs_in</key>
+					<string>{var:command_runs_in_opt}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>9BC2AE68-91DD-4401-AA48-E27C924F39E6</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
-	<string>Search through your iTerm profiles using Alfred and easily open one. Extremely useful if you have a lot of profiles, e.g. with an SSH command for each server.</string>
+	<string># iTerm Toolkit
+
+This Alfred workflow contains several tools to make it easier to work with the excellent [iTerm](https://iterm2.com/) terminal emulator.
+
+## Opening new Profiles
+
+Search through your iTerm profiles using Alfred and easily open one. Useful if you have a lot of profiles, e.g. with an SSH command for each server.
+
+
+## Running Commands
+
+Alfred includes a feature for opening a terminal window and running shell commands. If
+you use iTerm2, this workflow gives you some enhanced options.</string>
 	<key>uidata</key>
 	<dict>
 		<key>174CD537-DE13-499A-A00E-41FC246DE43D</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
 			<key>xpos</key>
-			<real>300</real>
+			<real>315</real>
 			<key>ypos</key>
-			<real>360</real>
+			<real>505</real>
+		</dict>
+		<key>42BFB972-5198-4114-830F-5347FA3100C1</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>xpos</key>
+			<real>310</real>
+			<key>ypos</key>
+			<real>125</real>
+		</dict>
+		<key>4F12876A-C84D-4D58-ADD9-119BBF3B9D6E</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
+			<key>xpos</key>
+			<real>315</real>
+			<key>ypos</key>
+			<real>575</real>
+		</dict>
+		<key>5A83D99C-3375-4763-A9B8-37F5D4D26A8D</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
+			<key>xpos</key>
+			<real>310</real>
+			<key>ypos</key>
+			<real>290</real>
+		</dict>
+		<key>5C3FCCC0-751E-4E7C-96AD-8B6F20578B9D</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>Select text and run this Universal Action to run that text as a shell command</string>
+			<key>xpos</key>
+			<real>95</real>
+			<key>ypos</key>
+			<real>720</real>
+		</dict>
+		<key>6218105B-769C-4EF4-9043-CA26953D892A</key>
+		<dict>
+			<key>note</key>
+			<string>Script to run a shell command</string>
+			<key>xpos</key>
+			<real>545</real>
+			<key>ypos</key>
+			<real>510</real>
 		</dict>
 		<key>7D9DF57A-5DF9-5DB9-AB88-88DAC6AD7FB1</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
 			<key>xpos</key>
 			<real>85</real>
 			<key>ypos</key>
-			<real>35</real>
+			<real>55</real>
 		</dict>
-		<key>8F087205-5CB3-40DC-BE24-E74C1E5E0CD8</key>
+		<key>9BC2AE68-91DD-4401-AA48-E27C924F39E6</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
 			<key>xpos</key>
-			<real>430</real>
+			<real>315</real>
 			<key>ypos</key>
-			<real>35</real>
+			<real>785</real>
 		</dict>
-		<key>B6E73E78-3C51-4C85-A5AD-A021526AC985</key>
+		<key>AB02EE64-6856-4173-9417-141421D02049</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
 			<key>xpos</key>
-			<real>430</real>
+			<real>310</real>
 			<key>ypos</key>
-			<real>190</real>
+			<real>350</real>
+		</dict>
+		<key>B37D23E9-381F-43E4-BB88-64768A812903</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>xpos</key>
+			<real>315</real>
+			<key>ypos</key>
+			<real>720</real>
+		</dict>
+		<key>C369E338-4CD5-4D28-9DEC-959796C77DCD</key>
+		<dict>
+			<key>note</key>
+			<string>Script to open an iTerm profile</string>
+			<key>xpos</key>
+			<real>425</real>
+			<key>ypos</key>
+			<real>60</real>
 		</dict>
 		<key>D42EB9ED-6F46-4B61-A6D5-6C1EE503F197</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
+			<key>note</key>
+			<string>Type a shell command in alfred and run it</string>
 			<key>xpos</key>
 			<real>80</real>
 			<key>ypos</key>
-			<real>185</real>
+			<real>290</real>
 		</dict>
 		<key>FD4FF832-E0C3-4235-88E9-8F17142B1BF2</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
+			<key>note</key>
+			<string>Select a directory in Alfred and run this action to open a new iterm window in that directory</string>
 			<key>xpos</key>
 			<real>85</real>
 			<key>ypos</key>
-			<real>330</real>
+			<real>500</real>
+		</dict>
+		<key>FF506E5C-E831-46D7-B67B-AC367F63630C</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>xpos</key>
+			<real>310</real>
+			<key>ypos</key>
+			<real>65</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
@@ -489,13 +724,39 @@ end run</string>
 				</array>
 			</dict>
 			<key>description</key>
-			<string>Choose whether the selected profile opens in a new tab or a new window</string>
+			<string>Choose whether the selected profile opens in a new tab or a new window.</string>
 			<key>label</key>
 			<string>Profile Opens In</string>
 			<key>type</key>
 			<string>popupbutton</string>
 			<key>variable</key>
 			<string>profile_opens_in</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>tab</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>New Tab</string>
+						<string>tab</string>
+					</array>
+					<array>
+						<string>New Window</string>
+						<string>window</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string>Choose whether the selected profile opens in a new tab or a new window when clicked while holding the ⌥ key.</string>
+			<key>label</key>
+			<string>Profile Opens In Opt</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>profile_opens_in_opt</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -522,6 +783,36 @@ end run</string>
 			<key>config</key>
 			<dict>
 				<key>default</key>
+				<string>window</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>New Tab</string>
+						<string>tab</string>
+					</array>
+					<array>
+						<string>New Window</string>
+						<string>window</string>
+					</array>
+					<array>
+						<string>Current Session</string>
+						<string>session</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string>Run commands in a...</string>
+			<key>label</key>
+			<string>Command Runs In</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>command_runs_in</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
 				<string>tab</string>
 				<key>pairs</key>
 				<array>
@@ -540,13 +831,13 @@ end run</string>
 				</array>
 			</dict>
 			<key>description</key>
-			<string></string>
+			<string>When the option key is pressed, run commands in</string>
 			<key>label</key>
-			<string>Command Runs In</string>
+			<string>Command Runs In Opt</string>
 			<key>type</key>
 			<string>popupbutton</string>
 			<key>variable</key>
-			<string>command_runs_in</string>
+			<string>command_runs_in_opt</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -561,7 +852,7 @@ end run</string>
 				<true/>
 			</dict>
 			<key>description</key>
-			<string>The name of the profile to use to run the shell command. If empty, use the default profile. Ignored if 'Command Runs In' is set to 'Active Session'</string>
+			<string>The name of the profile to use to run the shell command. If empty, use the default profile. Ignored if 'Command Runs In' is set to 'Current Session'</string>
 			<key>label</key>
 			<string>Command Profile</string>
 			<key>type</key>
@@ -611,8 +902,8 @@ end run</string>
 		</dict>
 	</array>
 	<key>version</key>
-	<string>0.2.0</string>
+	<string>0.3.0</string>
 	<key>webaddress</key>
-	<string>https://github.com/kotfu/alfred-iterm-toolkit-workflow</string>
+	<string>https://github.com/kotfu/alfred-workflow-iterm-toolkit</string>
 </dict>
 </plist>

@@ -81,7 +81,7 @@ end send_text
 -- entry point, equivilent to main()
 on run argv
     set theCommand to item 1 of argv
-    set runs_in to (system attribute "command_runs_in")
+    set runs_in to (system attribute "runs_in")
     set command_profile to (system attribute "command_profile")
     --set iterm_opens_quietly to (system attribute "opens_quietly")
 

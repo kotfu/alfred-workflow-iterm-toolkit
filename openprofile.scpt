@@ -45,7 +45,7 @@ end is_running
 -- entry point, equivilent to main()
 on run argv
     set theProfile to item 1 of argv
-    set openin to (system attribute "profile_opens_in")
+    set openin to (system attribute "opens_in")
 
     if openin = "tab" then
         new_tab(theProfile)
