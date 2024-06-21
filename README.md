@@ -20,10 +20,11 @@ they log in to. You can easily launch any of these profiles from Alfred.
 
 - Activate Alfred (I use Control-Option-Shift-Command-Space, aka Hyper-Space)
 - Type the Profile Keyword you have set in the iTerm Toolkit Workflow Configuration.
-  The default is `sh`.
+  The default is `it`.
 - Select an iTerm profile by typing any of the characters in the name of the
-  desired iTerm profile, and or use the up and down arrow keys
-- Press return (or hold ⌥ and hit return) to open the iTerm profile
+  desired iTerm profile (no need to type a space), and/or use the up and down
+  arrow keys
+- Press return (or hold ⌥ and press return) to open the iTerm profile
 
 The profile will open in a new window or tab depending on your configuration
 settings for iTerm Toolkit.
@@ -100,4 +101,62 @@ selected directory.
 
 ## Configuration
 
+To access iTerm Toolkit configuration:
 
+- Open Alfred Settings
+- Select  `Workflows` in the sidebar
+- Select `iTerm Toolkit`
+- Click the `Configure Workflow...` button
+
+![](gfx/config-profile.png)
+
+**Profile Keyword**
+
+Enter any combination of letters, numbers, and symbols. Whatever you enter
+here will be the keyword you will type to search for iTerm profiles. When
+searching, you don't need to type a space between this keyword and the name
+of the profile you are searching for.
+
+**Profile Opens In**
+
+Choose whether a selected profile will open in a `New Window` or a
+`New Tab`. If set to `New Tab` and there isn't an existing iTerm window
+open, the profile will open in a new window.
+
+**Profile Opens In Option**
+
+Choose whether the profile will open in a new window or a new tab while
+selected with the option key pressed. If you set **Profile Opens In** to
+`New Window`, you probably want to set this to `New Tab`. If set to `New Tab`
+and there isn't an existing iTerm window open, the profile will open in a new
+window.
+
+![](gfx/config-command.png)
+
+**Command Keyword**
+
+
+**Command Runs In**
+
+
+**Command Runs In Option**
+
+
+**Command Profile**
+
+
+![](gfx/config-other.png)
+
+**iTerm Opens Quietly**
+
+
+**Delay Before Typing Command**
+
+
+
+## Credits and Inspiration
+
+This toolkit was inspired by and uses ideas and code from the following
+projects:
+
+- https://github.com/jessedobbelaere/alfred-iterm-profiles-workflow
